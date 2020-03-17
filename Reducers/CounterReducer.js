@@ -4,6 +4,10 @@ export default (state = 0, action) => {
       return state + 1;
     case "Decrement":
       return state - 1;
+    case "HighIncrement":
+      return state + action.incrementValue;
+    case "HighDecrement":
+      return state - action.decrementValue;
     default:
       return state;
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Counter from './CounterContainer';
-import * as CounterActions from '../../Actions/CounterAction';
+import { highIncrementCount, highDecrementCount } from '../../Actions/CounterAction';
 
 function mapStateToProps(state) {
   return {
@@ -13,7 +13,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return{
     onIncrement: () => dispatch({type: "Increment"}),
-    onDecrement: () => dispatch({type: "Decrement"})
+    onDecrement: () => dispatch({type: "Decrement"}),
+    onHighIncrement: (value) => dispatch(highIncrementCount(value)),
+    onHighDecrement: (value) => dispatch(highDecrementCount(value))
   }
 }
 
